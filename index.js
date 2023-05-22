@@ -47,6 +47,10 @@ function greetPure(name) {
 console.log(greetPure("Alonzo0"));
 greetPure("Allan");
 
+
+
+
+
 // Why functional programming
     // more predictible, safer
     
