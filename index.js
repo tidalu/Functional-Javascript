@@ -468,5 +468,46 @@ writeMessage(
         console.log(hypeUp('Js'));
         console.log(hypeUp('FP'));
 
-        // exercise
+
+        // immutability
+
+
+        // Avoid mutability for happier programming
+            // on't change in-place instead replace
+
+            // mutation(Dangerous!)
+
+            let cities = ['Delhi', 'Bombay', 'Bangalore'];
+            cities[1] = 'Mumbai';
+            console.log(cities);
+
+            // not mutation(Safer!)
+            const oldCities = ['Delhi', 'Bombay', 'Bangalore'];
+
+            const newCitites = oldCities.map((city) => {
+                if (city === 'Bombay') return "Mumbai";
+                if (city === "Bangalore") return "Bengaluru";
+                return city;
+            });
+            console.log(oldCities);
+            console.log(newCitites);
+
+
+            // copying data is not very efficient...
+            // immutable data structures to the rescue
+
+
+            // immutable (aka persistent ) data structures
+            // use "Structural sharing" to reuse unchanged 
+
+
+
+            // we covered 
+                // pure functions and avoiding side effects
+                // recursions instead of iteration
+                // higher order functions
+                // closures and composition
+                // avoiding data mutation
+
+
 
