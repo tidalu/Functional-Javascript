@@ -337,7 +337,7 @@ console.table({Doubled: doubles, Halved: halved});
 
 /////////////////////////////////////////
 
-            Closure                                      
+            // Closure                                      
 
 /////////////////////////////////////////
 
@@ -346,3 +346,127 @@ console.table({Doubled: doubles, Halved: halved});
 // functions can define functions 
     // return the inner function
     // and it will 'remember' scope
+
+
+    // closure
+
+    function makeAdjectifier(adjective)  {
+        return function(noun) {
+            return adjective + ' ' + noun;
+        };
+    }
+    const  coolify = makeAdjectifier('cool');
+    console.log(coolify('workshop'));
+    console.log(coolify('drink'));
+
+
+    // partial application and currying
+
+    // this lets us 'partially apply' functions 
+        // to 'lock in' some arguments and make more reusable functions
+
+
+    // currying 
+        // breaks up a multi-arg function into a series of single-arg ones
+
+
+    // currying
+
+    function greet(greeting, name) {
+        return `${greeting}, ${name}!`;
+
+    }
+
+    function curryGreet(greeting) {
+        return function(name) {
+            return `${greeting}, ${name}!`;
+        }
+    };
+
+
+    const greetItal = curryGreet('Ciao');
+    console.log(greetItal('Alonzo')); // "Ciao Alonzo"
+
+    const greetTex = curryGreet('Howdy');
+    console.log(greetTex("alonzo"));
+    console.log(greetTex("Alan"));
+
+
+    // basic closure
+
+    function writeMessage(message, salutation, name) {
+        return `<p style="padding:3em;font-family:monospace">${message}<br><br>${salutation},<br>${name}</p>`;
+        }
+
+writeMessage(
+        "You're doing amazing! Hopefully these exercises help you get a bit _closure_ to your programming goals.",
+        "Keep _currying_ on",
+        "Functional Pungrammer"
+    );
+
+    // per signed
+
+    function signMessageFrom (name, salutation) {
+        return (message) => writeMessage(message, salutation, name);
+    }
+
+    function signMessageWidth(salutation) {
+        return (message, name) => writeMessage(message, salutation, name);
+    }
+
+
+
+    // exercise
+
+    function baho (name) {
+        return (subject, grade) => { return name + 's ' + subject + ' is ' + grade };
+    }
+
+    console.log(baho('Ulugbek')('Algebra', '3'));
+
+
+    function fullInfo (number) {
+        return name => surname => age => town => graduate => {return number + name + surname + age + town + graduate};
+
+    }
+
+
+    const v1 = fullInfo(1);
+    const v2 = v1(' Ulugbek ');
+    const v3 = v2('Norbutaev ');
+    const v4 = v3('19 ');
+    const v5 = v4('Lodz');
+    const v6 = v5( ' Uni Lodz!')
+
+    // or 
+
+    const full = fullInfo(0)(' Ulugbek ')('Norbutaev ')('19 ')('Lodz')( ' Uni Lodz!');
+    console.log(full);
+    console.log(v6);
+
+
+
+    // function composition 
+
+    // it is functions all the way down 
+        // program === functions
+
+        // FUNCTION COMPOSITION
+        // lets us make complex programs out of simple functions
+
+
+        // composing functions
+
+        var ender = (ending) => (input) => input + ending;
+
+        var adore = ender(" rocks");
+        var announce = ender(", y'all");
+        var exclaim = ender("!");
+
+        var hypeUp = x => exclaim(announce(adore(x)));
+
+        console.log(hypeUp('Js'));
+        console.log(hypeUp('FP'));
+
+        // exercise
+
