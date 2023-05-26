@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 // start functional programming
 
 // what is a functional programming
@@ -10,6 +11,21 @@
 
 // object-oriented programming - keep state to yourself send/receive messages
 
+=======
+
+// start functional programming
+
+// what is a functional programming
+// --- it is a style of coding which is available in most languages
+// --- a programming paradigm(worldview/mindset)
+
+//imperative programming - follow my commands do this then
+
+// declarative programming - this is what i want do it however you want
+
+// object-oriented programming - keep state to yourself send/receive messages
+
+>>>>>>> 32ad03c734dadfb8a62db362c796a05abbb1684b
 // functional programming -
 // one simple idea  
 
@@ -130,7 +146,11 @@ getAnswer = ƒ(fnName)
 pureOrNot = ƒ()
 
 
+<<<<<<< HEAD
 // -----------------------------------------------------------
+=======
+// // -----------------------------------------------------------
+>>>>>>> 32ad03c734dadfb8a62db362c796a05abbb1684b
 getDate = ƒ()
 function getDate() {
     return new Date().toDateString();
@@ -298,6 +318,7 @@ function concat(array1, array2) {
 function length(array) {
     return array.length;
 }
+
 
 // Return the first item in an array
 function head(array) {
