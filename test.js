@@ -35,3 +35,23 @@ function tailRecursiveFibonacci(n, a = 0, b = 1) {
 
 console.log(tailRecursiveFibonacci(104));
 
+console.clear();
+
+var twoSum = function(nums, target) {
+    var result = [];
+    outerLoop:
+    for(var i = 0; i < nums.length; ++i ){
+        for(var j = 0; j < nums.length; ++j){
+        if((nums[i] + nums[j]) === target){
+            result.push(i, j);
+            break outerLoop;
+        }
+        }
+    }
+    return result;
+};
+
+const nums = [2, 7, 11, 15];
+const target = 9;
+
+console.log(twoSum(nums, target));
