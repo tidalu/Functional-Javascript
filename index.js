@@ -6,6 +6,7 @@
 // --- a programming paradigm(worldview/mindset)
 
 //imperative programming - follow my commands do this then
+    // or like procedural programming, C and Bash scripting is kinda can be an example, there will be kinda steps to do
 
 // declarative programming - this is what i want do it however you want
 
